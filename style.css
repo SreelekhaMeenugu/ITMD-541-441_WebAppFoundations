@@ -1,0 +1,187 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #2c3e50;
+}
+
+/* Header styles */
+.header {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Calculator container styles */
+.calculator-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Currency info box styles - Updated for wider display */
+.currency-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f8f9fa;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+    width: auto;
+    min-width: 300px;
+    max-width: 350px;
+    white-space: nowrap;  /* Prevents text wrapping */
+}
+
+/* Title styles */
+h2 {
+    text-align: left;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-size: 2rem;
+    font-weight: 600;
+    position: relative;
+    padding-top: 10px;
+    max-width: 50%;  /* Ensures title doesn't overlap with currency box */
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+    clear: both;
+    margin-top: 40px;
+}
+
+/* Label styles */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+/* Input and select styles */
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+/* Disabled input styles */
+input[disabled] {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+    color: #495057;
+    cursor: not-allowed;
+}
+
+/* Range slider styles */
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4a90e2;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #357abd;
+}
+
+/* Select dropdown styles */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) center;
+    padding-right: 35px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .calculator-wrapper {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .currency-info {
+        position: static;
+        margin: 10px 0 20px 0;
+        width: 100%;
+        max-width: none;
+        text-align: center;
+        white-space: normal;  /* Allow wrapping on mobile */
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .header h1 {
+        font-size: 1.4rem;
+    }
+
+    .form-group {
+        margin-top: 20px;
+    }
+}
+
+/* Animation for inputs */
+@keyframes highlight {
+    0% { border-color: #4a90e2; }
+    100% { border-color: #e2e8f0; }
+}
+
+input:not([type="range"]):focus, 
+select:focus {
+    animation: highlight 0.3s ease;
+}

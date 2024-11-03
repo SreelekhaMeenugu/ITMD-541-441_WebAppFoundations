@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>ITMD 4/541 - Lab 3 - Sreelekha Meenugu</h1>
+    </div>
+
+    <div class="calculator-wrapper">
+        <div class="currency-info">
+            Currency conversion:<br>
+            $1 USD = ¥149.34 JPY for Yen<br>
+            $1 USD = ₹84.07 INR for Rupee
+        </div>
+
+        <h2>Tip Calculator</h2>
+        
+        <form id="tipForm">
+            <div class="form-group">
+                <label for="billTotal">Bill Total:</label>
+                <input type="number" id="billTotal" required>
+            </div>
+
+            <div class="form-group">
+                <label for="currency">Select Currency:</label>
+                <select id="currency">
+                    <option value="USD">US Dollar ($)</option>
+                    <option value="INR">Indian Rupee (₹)</option>
+                    <option value="JPY">Japanese Yen (¥)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="tipSlider">Tip:</label>
+                <input type="range" id="tipSlider" min="0" max="100" value="10">
+            </div>
+
+            <div class="form-group">
+                <label for="tipPercentage">Tip Percentage:</label>
+                <input type="text" id="tipPercentage" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="tipAmount">Converted Tip Amount:</label>
+                <input type="text" id="tipAmount" disabled>
+            </div>
+
+            <div class="form-group">
+                <label for="totalBill">Converted Total Bill with Tip:</label>
+                <input type="text" id="totalBill" disabled>
+            </div>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
